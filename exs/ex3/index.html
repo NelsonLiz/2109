@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Components</title>
+        <style>
+            body {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <style>
+            #counter {
+                background-color: rgb(216, 199, 122);
+                display: flex;
+            }
+
+            #counter > button {
+                width: 30px;
+                height: 35px;
+                font-size: 20px;
+                background-color: rgb(219, 138, 63);
+                border: none;
+                border-radius: 5px;
+                margin: 5px;
+
+            }
+
+            #counter > div {
+                flex: 1;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            #bar {
+                width:0px;
+                height:15px;
+                background-color: crimson;
+            }
+
+            #reset {
+                display: flex;
+                width: 55px;
+                height: 35px;
+                font-size: 20px;
+                background-color: rgb(219, 138, 63);
+                border: none;
+                border-radius: 5px;
+                margin: 5px;
+            }
+        </style>
+        <div id='counter'>
+            <button onclick="inc()">+</button>
+            <div>1</div>
+            <button onclick="dec()">-</button>
+        </div>
+        <div id='bar'></div>
+        <button id='reset' onclick="re()">reset</button>
+        <script>
+            var num = 1;
+            function inc(){
+                //console.log("change ui #1");
+                //debugger;
+                //console.log("change button ui #1");
+                //debugger;
+                num = num + 1;
+                document.querySelector("#counter > div").innerText = num;
+                document.querySelector("#bar").style.width = (num*10)+"px";
+            }
+
+            function dec(){
+                num = num - 1;
+                document.querySelector("#counter > div").innerText = num;
+            }
+            function re(){
+                num = 0;
+                document.querySelector("#counter > div").innerText = num;
+            }
+        </script>
+    </body>
+</html>
