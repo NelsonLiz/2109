@@ -67,17 +67,18 @@ class TheCounter extends HTMLElement {
     inc(){
         this.num = this.num + 1;
         this.shadowRoot.querySelector("#number").innerText = this.num;
-        this.shadowRoot.querySelector("#bar").Style.width = (this.num*10)+"px";
+        this.shadowRoot.querySelector("#bar").style.width = (this.num*10)+"px";
     }
 
     dec(){
         this.num = this.num - 1;
         this.shadowRoot.querySelector("#number").innerText = this.num;
-        this.shadowRoot.querySelector("#bar").Style.width = (this.num*10)+"px";
+        this.shadowRoot.querySelector("#bar").style.width = (this.num*10)+"px";
     }
     re(){
         this.num = this.num = 1;
         this.shadowRoot.querySelector("#number").innerText = this.num;
+        this.shadowRoot.querySelector("#bar").style.width = (this.num*0)+"px";
     }
 }
 
